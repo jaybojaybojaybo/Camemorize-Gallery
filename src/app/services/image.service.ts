@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
 
 @Injectable()
 export class ImageService {
-private uid: string;
+  private uid: string;
 
   constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.afAuth.authState.subscribe(auth => {
@@ -21,6 +21,11 @@ private uid: string;
 
   getImages(): Observable<GalleryImage[]>{
     return this.db.list('uploads').valueChanges();
+  }
+
+  getImage(key: string) {
+    return firebase.database().ref('upload/' + key).once('value')
+    .then((snap) => snap.val());
   }
 
 }

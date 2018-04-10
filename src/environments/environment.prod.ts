@@ -5,7 +5,7 @@ export const environment = {
     authDomain: "camemorize-gallery.firebaseapp.com",
     databaseURL: "https://camemorize-gallery.firebaseio.com",
     projectId: "camemorize-gallery",
-    storageBucket: "",
+    storageBucket: "camemorize-gallery.appspot.com",
     messagingSenderId: "719213587118"
     }
 };
