@@ -20,7 +20,7 @@ private uid: string;
   }
 
   getImages(): Observable<GalleryImage[]>{
-    return this.db.list('uploads');
+    return this.db.list('uploads').valueChanges();
   }
 
 }

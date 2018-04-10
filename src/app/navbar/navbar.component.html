@@ -1,19 +1,38 @@
-<div class="row">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand logo" href="#">{{ title }}</a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav" *ngIf="(user|async)?.uid">
-          <li><a routerLink="/gallery">Image Gallery</a></li>
-          <li><a routerLink="/upload">Upload</a></li>
-        </ul>
-        <ul class="nav navbar-nav account">
-          <li *ngIf="!(user|async)?.uid"><a routerLink="/login">Log In</a></li>
-          <li *ngIf="(user|async)?.uid"><a href="#" (click)="logOut()">Log Out</a></li>
-        </ul>
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">Camemorize</h4>
+          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <ul class="nav navbar-nav" *ngIf="(user|async)?.uid">
+            <li><a routerLink="/gallery">Image Gallery</a></li>
+            <li><a routerLink="/upload">Upload</a></li>
+          </ul>
+          <ul class="nav navbar-nav account">
+            <li *ngIf="!(user|async)?.uid"><h4><a routerLink="/login">Log In</a></h4></li>
+            <li *ngIf="(user|async)?.uid"><a href="#" (click)="logOut()">Log Out</a></li>
+          </ul>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Follow us Twitter</a></li>
+            <li><a href="#" class="text-white">Like us on Facebook</a></li>
+            <li><a href="#" class="text-white">Email us</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </nav>
-</div>
+  </div>
+  <div class="navbar navbar-dark bg-dark box-shadow">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <strong>Camemorize</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
