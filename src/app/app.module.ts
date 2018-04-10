@@ -18,7 +18,7 @@ import { UploadComponent } from './upload/upload.component';
 import { AuthenticationGuard } from './services/authenticationGuard.service';
 import { AuthenticationService } from './services/authentication.service';
 import { ImageService } from './services/image.service';
-import { UploadService } from './services/authenticationGuard.service';
+import { UploadService } from './services/upload.service';
 
 import { appRoutes } from './routes';
 
