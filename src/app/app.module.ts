@@ -28,7 +28,11 @@ import { UploadService } from './services/upload.service';
 import { AnalysisService } from './services/analysis.service';
 
 import { appRoutes } from './routes';
+<<<<<<< HEAD
 import { AnalysisComponent } from './analysis/analysis.component';
+=======
+import { WebcamComponent } from './webcam/webcam.component';
+>>>>>>> 750403306ab66042cfa50f69e75c18b14f04731a
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { AnalysisComponent } from './analysis/analysis.component';
     NavbarComponent,
     LoginComponent,
     UploadComponent,
+<<<<<<< HEAD
     AnalysisComponent
+=======
+    WebcamComponent
+>>>>>>> 750403306ab66042cfa50f69e75c18b14f04731a
   ],
   imports: [
     BrowserModule,

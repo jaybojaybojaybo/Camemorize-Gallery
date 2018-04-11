@@ -1,9 +1,15 @@
-.img-container{
+.jumbotron{
     margin:24px;
     box-shadow:#555 1px 2px 8px 1px;
     min-height: 660px;
     min-width: 900px;
     background-position: center;
-    background-repeat: no-repeat;
+    width: auto;
     align-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.jumbotron{
+    background-repeat: no-repeat;
+    background-size: auto 100%;
 }
