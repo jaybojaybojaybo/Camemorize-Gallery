@@ -28,6 +28,13 @@ import { UploadService } from './services/upload.service';
 import { AnalysisService } from './services/analysis.service';
 
 import { appRoutes } from './routes';
+import { WebCamModule } from 'ack-angular-webcam';
+import { Request } from '@angular/http';
+import { TakePictureComponent } from './take-picture/take-picture.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { Http, Headers} from '@angular/http';
+import { Injectable } from '@angular/core';
 import { AnalysisComponent } from './analysis/analysis.component';
 import { WebcamComponent } from './webcam/webcam.component';
 
@@ -40,6 +47,7 @@ import { WebcamComponent } from './webcam/webcam.component';
     LoginComponent,
     UploadComponent,
     AnalysisComponent,
+    TakePictureComponent
     WebcamComponent
   ],
   imports: [
@@ -52,6 +60,7 @@ import { WebcamComponent } from './webcam/webcam.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    WebCamModule,
     HttpModule,
     HttpClientModule
   ],
@@ -64,4 +73,8 @@ import { WebcamComponent } from './webcam/webcam.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+}
