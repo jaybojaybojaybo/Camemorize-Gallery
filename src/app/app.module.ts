@@ -11,6 +11,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -23,8 +25,10 @@ import { AuthenticationGuard } from './services/authenticationGuard.service';
 import { AuthenticationService } from './services/authentication.service';
 import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
+import { AnalysisService } from './services/analysis.service';
 
 import { appRoutes } from './routes';
+import { AnalysisComponent } from './analysis/analysis.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import { appRoutes } from './routes';
     ImageDetailComponent,
     NavbarComponent,
     LoginComponent,
-    UploadComponent
+    UploadComponent,
+    AnalysisComponent
   ],
   imports: [
     BrowserModule,
@@ -44,13 +49,16 @@ import { appRoutes } from './routes';
     AngularFireAuthModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    HttpModule,
+    HttpClientModule
   ],
   providers: [
     AuthenticationGuard,
     AuthenticationService,
     ImageService,
-    UploadService
+    UploadService,
+    AnalysisService
   ],
   bootstrap: [AppComponent]
 })
