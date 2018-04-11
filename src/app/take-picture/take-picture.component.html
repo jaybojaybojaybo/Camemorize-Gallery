@@ -1,0 +1,10 @@
+<ack-webcam
+  [(ref)]   = "webcam"
+  [options] = "options"
+  (success) = "onCamSuccess($event)"
+  (catch)   = "onCamError($event)"
+></ack-webcam>
+<div class="container">
+  <button (click)="genBase64()"> generate base64 </button>
+  <button (click)="genPostData()"> generate post data </button>
+</div>
