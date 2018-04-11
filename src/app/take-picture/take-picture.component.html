@@ -1,10 +1,9 @@
-<ack-webcam
-  [(ref)]   = "webcam"
-  [options] = "options"
-  (success) = "onCamSuccess($event)"
-  (catch)   = "onCamError($event)"
-></ack-webcam>
-<div class="container">
-  <button (click)="genBase64()"> generate base64 </button>
-  <button (click)="genPostData()"> generate post data </button>
+<div>
+  <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"></webcam>
+  <br/>
+  <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+</div>
+
+<div class="snapshot" *ngIf="webcamImage">
+  <img [src]="webcamImage.imageAsDataUrl"/>
 </div>
