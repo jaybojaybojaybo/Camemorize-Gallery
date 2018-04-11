@@ -46,8 +46,8 @@ import { WebcamComponent } from './webcam/webcam.component';
     NavbarComponent,
     LoginComponent,
     UploadComponent,
+    AnalysisComponent,
     TakePictureComponent
-    AnalysisComponent
     WebcamComponent
   ],
   imports: [
