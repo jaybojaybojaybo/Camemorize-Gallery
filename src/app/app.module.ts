@@ -12,7 +12,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpModule, Http } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -33,10 +33,9 @@ import { Request } from '@angular/http';
 import { TakePictureComponent } from './take-picture/take-picture.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Http, Headers} from '@angular/http';
+import { Headers} from '@angular/http';
 import { Injectable } from '@angular/core';
 import { AnalysisComponent } from './analysis/analysis.component';
-import { WebcamComponent } from './webcam/webcam.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,6 @@ import { WebcamComponent } from './webcam/webcam.component';
     UploadComponent,
     AnalysisComponent,
     TakePictureComponent
-    WebcamComponent
   ],
   imports: [
     BrowserModule,
