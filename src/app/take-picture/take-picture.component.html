@@ -1,9 +1,10 @@
-<div>
-  <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"></webcam>
-  <br/>
+<div class="camerizer">
+  <webcam class="webcamerize" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"></webcam>
+  <br>
   <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
 </div>
-
+<app-upload></app-upload>
 <div class="snapshot" *ngIf="webcamImage">
   <img [src]="webcamImage.imageAsDataUrl"/>
+  
 </div>
