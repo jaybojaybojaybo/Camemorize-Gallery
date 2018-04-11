@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WebcamComponent } from './webcam.component';
+import { TakePictureComponent } from './take-picture.component';
 
-describe('WebcamComponent', () => {
-  let component: WebcamComponent;
-  let fixture: ComponentFixture<WebcamComponent>;
+describe('TakePictureComponent', () => {
+  let component: TakePictureComponent;
+  let fixture: ComponentFixture<TakePictureComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WebcamComponent ]
+      declarations: [ TakePictureComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WebcamComponent);
+    fixture = TestBed.createComponent(TakePictureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

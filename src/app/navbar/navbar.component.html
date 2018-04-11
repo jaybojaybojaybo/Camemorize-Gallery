@@ -10,6 +10,7 @@
           <ul class="nav navbar-nav" *ngIf="(user|async)?.uid">
             <li><a routerLink="/gallery">Image Gallery</a></li>
             <li><a routerLink="/upload">Upload</a></li>
+            <li><a routerLink="/takepic">Take Pic</a></li>
           </ul>
           <ul class="nav navbar-nav account">
             <li *ngIf="!(user|async)?.uid"><h4><a routerLink="/login">Log In</a></h4></li>

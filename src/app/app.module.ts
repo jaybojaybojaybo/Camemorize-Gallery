@@ -25,7 +25,13 @@ import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
 
 import { appRoutes } from './routes';
-import { WebcamComponent } from './webcam/webcam.component';
+import { WebCamModule } from 'ack-angular-webcam';
+import { Request } from '@angular/http';
+import { TakePictureComponent } from './take-picture/take-picture.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { Http, Headers} from '@angular/http';
+import { Injectable } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,7 @@ import { WebcamComponent } from './webcam/webcam.component';
     NavbarComponent,
     LoginComponent,
     UploadComponent,
-    WebcamComponent
+    TakePictureComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,9 @@ import { WebcamComponent } from './webcam/webcam.component';
     AngularFireAuthModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    WebCamModule,
+    HttpClientModule
   ],
   providers: [
     AuthenticationGuard,
@@ -56,4 +64,8 @@ import { WebcamComponent } from './webcam/webcam.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+}
