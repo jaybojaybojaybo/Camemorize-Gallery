@@ -6,9 +6,18 @@ li { display:inline;}
   border: 4px solid #eee;
   box-shadow:#555 1px 1px 8px 1px;
   cursor: pointer;
-  width: 300px;
+  width: auto;
+  max-width: 450px;
+  height: auto;
+  max-height: 300px;
 }
 
 h2{
   margin-bottom: 20px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }

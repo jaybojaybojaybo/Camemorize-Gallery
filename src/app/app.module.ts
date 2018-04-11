@@ -25,6 +25,7 @@ import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
 
 import { appRoutes } from './routes';
+import { WebcamComponent } from './webcam/webcam.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { appRoutes } from './routes';
     ImageDetailComponent,
     NavbarComponent,
     LoginComponent,
-    UploadComponent
+    UploadComponent,
+    WebcamComponent
   ],
   imports: [
     BrowserModule,
