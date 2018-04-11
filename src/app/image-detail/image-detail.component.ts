@@ -3,6 +3,7 @@ import { ImageService } from '../services/image.service';
 import { ActivatedRoute } from '@angular/router';
 import { GalleryImage } from '../models/galleryImage.model';
 import { Observable } from 'rxjs/Observable';
+import { AnalysisService } from '../services/analysis.service';
 
 @Component({
   selector: 'app-image-detail',
@@ -14,9 +15,13 @@ export class ImageDetailComponent implements OnInit {
   private title: string = '';
   private description: string = '';
 
+  analysis: any[] = null;
+
   constructor(
     private imageService: ImageService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private analysisService: AnalysisService
+  ) { }
 
   getImageUrl(key: string){
     this.imageService.getImage(key)
@@ -35,6 +40,15 @@ export class ImageDetailComponent implements OnInit {
   ngOnInit() {
     this.getImageUrl(this.route.snapshot.params['id']);
     return this.imageService.getImage(this.imageUrl)
+  }
+
+  detectFace() {
+    this.analysisService.detectFace(this.imageUrl)
+      .subscribe(response => {
+        console.log("Did It!");
+        this.analysis = response.json();
+        console.log(this.analysis)
+      })
   }
 
 }
