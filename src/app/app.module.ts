@@ -11,6 +11,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -23,6 +25,7 @@ import { AuthenticationGuard } from './services/authenticationGuard.service';
 import { AuthenticationService } from './services/authentication.service';
 import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
+import { AnalysisService } from './services/analysis.service';
 
 import { appRoutes } from './routes';
 import { WebCamModule } from 'ack-angular-webcam';
@@ -32,6 +35,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Http, Headers} from '@angular/http';
 import { Injectable } from '@angular/core';
+import { AnalysisComponent } from './analysis/analysis.component';
+import { WebcamComponent } from './webcam/webcam.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +47,8 @@ import { Injectable } from '@angular/core';
     LoginComponent,
     UploadComponent,
     TakePictureComponent
+    AnalysisComponent
+    WebcamComponent
   ],
   imports: [
     BrowserModule,
@@ -54,13 +61,15 @@ import { Injectable } from '@angular/core';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     WebCamModule,
+    HttpModule,
     HttpClientModule
   ],
   providers: [
     AuthenticationGuard,
     AuthenticationService,
     ImageService,
-    UploadService
+    UploadService,
+    AnalysisService
   ],
   bootstrap: [AppComponent]
 })
