@@ -39,7 +39,7 @@ import { WebcamComponent } from './webcam/webcam.component';
     NavbarComponent,
     LoginComponent,
     UploadComponent,
-    AnalysisComponent
+    AnalysisComponent,
     WebcamComponent
   ],
   imports: [
