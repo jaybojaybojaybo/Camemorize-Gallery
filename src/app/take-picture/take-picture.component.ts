@@ -1,62 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { Http, Request } from '@angular/http';
-import { WebCamComponent } from 'ack-angular-webcam';
-import { base64 } from '@firebase/util';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
-import { Headers } from '@angular/http';
-import { Injectable } from '@angular/core';
-import { AuthenticationGuard } from '../services/authenticationGuard.service';
-import { AuthenticationService } from '../services/authentication.service';
-import { ImageService } from '../services/image.service';
-import { UploadService } from '../services/upload.service';
-import { TakePictureService } from '../services/takepic.service';
-
-
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
+import {WebcamImage} from 'ngx-webcam';
 
 @Component({
   selector: 'app-take-picture',
   templateUrl: './take-picture.component.html',
-  styleUrls: ['./take-picture.component.css'],
-  providers: [
-    TakePictureService
-  ]
-
+  styleUrls: ['./take-picture.component.css']
 })
 export class TakePictureComponent {
+    public showWebcam = true;
 
-  webcam: WebCamComponent
-  base64
+    public webcamImage: WebcamImage = null;
 
-  constructor(public http:Http) {}
+    private trigger: Subject<void> = new Subject<void>();
 
-  genBase64(){
-    this.webcam.getBase64()
-    .then( base => this.base64=base)
-    .catch( e => console.error(e) )
-  }
-
-  genPostData() {
-    this.webcam.captureAsFormData({fileName:'file.jpg'})
-    .then( formData => this.postFormData(formData) ) 
-    .catch( e => console.error(e))
-  }
-
-  postFormData(formData){
-    const config = {
-      method:"post",
-      url: "URL FOR FIREBASE DB HERE",
-      body: formData
+    public triggerSnapshot(): void {
+      this.trigger.next();
     }
 
-    const request = new Request(config)
+    public toggleWebcam(): void {
+      this.showWebcam = !this.showWebcam;
+    }
 
-    return this.http.request( request )
-  }
+    public handleImage(webcamImage: WebcamImage): void {
+      console.info('received webcam image', webcamImage);
+      this.webcamImage = webcamImage;
+    }
 
-  onCamError(err) {}
-
-  onCamSuccess(){}
-
+    public get triggerObservable(): Observable<void> {
+      return this.trigger.asObservable();
+    }
 }

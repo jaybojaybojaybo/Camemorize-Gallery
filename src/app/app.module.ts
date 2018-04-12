@@ -28,14 +28,17 @@ import { UploadService } from './services/upload.service';
 import { AnalysisService } from './services/analysis.service';
 
 import { appRoutes } from './routes';
-import { WebCamModule } from 'ack-angular-webcam';
+
 import { Request } from '@angular/http';
-import { TakePictureComponent } from './take-picture/take-picture.component';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Headers} from '@angular/http';
 import { Injectable } from '@angular/core';
 import { AnalysisComponent } from './analysis/analysis.component';
+import { WebcamModule } from 'ngx-webcam';
+import { TakePictureComponent } from './take-picture/take-picture.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +49,7 @@ import { AnalysisComponent } from './analysis/analysis.component';
     LoginComponent,
     UploadComponent,
     AnalysisComponent,
-    TakePictureComponent
+    TakePictureComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +61,9 @@ import { AnalysisComponent } from './analysis/analysis.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    WebCamModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    WebcamModule
   ],
   providers: [
     AuthenticationGuard,
