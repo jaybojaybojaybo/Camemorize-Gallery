@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { GalleryImage } from '../models/galleryImage.model';
-import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
 import { Upload } from '../models/upload.model';
 import * as firebase from 'firebase';
 
@@ -11,7 +11,10 @@ export class UploadService {
   private basePath = '/uploads';
   private uploads: AngularFireList<GalleryImage[]>;
 
-  constructor(private ngFire: AngularFireModule, private db: AngularFireDatabase) { }
+  constructor(
+    private ngFire: AngularFireModule, 
+    private db: AngularFireDatabase
+  ) { }
 
   uploadFile(upload: Upload) {
     const storageRef = firebase.storage().ref();
@@ -34,8 +37,9 @@ export class UploadService {
       upload.name = upload.file.name;
        this.saveFileData(upload);
      }
-  );
-}
+    );
+  }
+
   private saveFileData(upload: Upload) {
     this.db.list(`${this.basePath}/`).push(upload);
 

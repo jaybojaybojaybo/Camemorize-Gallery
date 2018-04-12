@@ -3,8 +3,7 @@
   <br>
   <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
 </div>
-<!-- <app-upload></app-upload> -->
 <div class="snapshot" *ngIf="webcamImage">
   <img [src]="webcamImage.imageAsDataUrl"/>
-
+  <button class="actionBtn" (click)="uploadWebcam()">Upload snapshot</button>
 </div>
