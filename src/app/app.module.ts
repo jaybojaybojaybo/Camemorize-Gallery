@@ -30,6 +30,8 @@ import { AnalysisService } from './services/analysis.service';
 import { appRoutes } from './routes';
 
 import { Request } from '@angular/http';
+import * as b64toBlob from 'b64-to-blob';
+import { Base64 } from 'js-base64';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
@@ -63,7 +65,7 @@ import { TakePictureComponent } from './take-picture/take-picture.component';
     ModalModule.forRoot(),
     HttpModule,
     HttpClientModule,
-    WebcamModule
+    WebcamModule,
   ],
   providers: [
     AuthenticationGuard,
