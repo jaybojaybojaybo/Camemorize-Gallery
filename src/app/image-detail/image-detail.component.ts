@@ -15,6 +15,10 @@ export class ImageDetailComponent implements OnInit {
   private title: string = '';
   private description: string = '';
   public anger: string = '';
+  public joy: string = '';
+  public sorrow: string = '';
+  public surprise: string = '';
+  public headwear: string = '';
 
   analysis: any[] = null;
   responses: any[] = null;
@@ -48,10 +52,13 @@ export class ImageDetailComponent implements OnInit {
     this.analysisService.detectFace(this.imageUrl)
       .subscribe(response => {
         this.analysis = response.json();
+        console.log(this.analysis);
+        console.log(this.analysis.responses[0].faceAnnotations[0].joyLikelihood);
         this.anger = this.analysis.responses[0].faceAnnotations[0].angerLikelihood;
-        return this.anger.toString;
-        // console.log(this.analysis);
-        // console.log("You mad, bro?" + " " + this.analysis.responses[0].faceAnnotations[0].angerLikelihood);
+        this.joy = this.analysis.responses[0].faceAnnotations[0].joyLikelihood;
+        this.sorrow = this.analysis.responses[0].faceAnnotations[0].sorrowLikelihood;
+        this.surprise = this.analysis.responses[0].faceAnnotations[0].surpriseLikelihood;
+        this.headwear = this.analysis.responses[0].faceAnnotations[0].headwearLikelihood;
     })
   }
 
