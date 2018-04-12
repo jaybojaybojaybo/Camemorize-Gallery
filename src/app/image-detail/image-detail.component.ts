@@ -49,7 +49,7 @@ export class ImageDetailComponent implements OnInit {
       .subscribe(response => {
         this.analysis = response.json();
         console.log(this.analysis);
-        console.log("You mad, bro?" + " " + this.analysis.responses[0].faceAnnotations[0].angerLikelihood);
+        // console.log("You mad, bro?" + " " + this.analysis.responses[0].faceAnnotations[0].angerLikelihood);
     })
   }
 
