@@ -9,4 +9,5 @@
   <form>
     <button (click)="detectFace()">Analyze Photo</button>
   </form>
+  <div *ngIf="this.joy | async">{{this.joy | async}}</div>
 </div>

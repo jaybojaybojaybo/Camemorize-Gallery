@@ -16,6 +16,8 @@ export class ImageDetailComponent implements OnInit {
   private description: string = '';
 
   analysis: any[] = null;
+  joy;
+
 
   constructor(
     private imageService: ImageService,
@@ -45,10 +47,10 @@ export class ImageDetailComponent implements OnInit {
   detectFace() {
     this.analysisService.detectFace(this.imageUrl)
       .subscribe(response => {
-        console.log("Did It!");
         this.analysis = response.json();
-        console.log(this.analysis)
-      })
+        console.log(this.analysis);
+        console.log("You mad, bro?" + " " + this.analysis.responses[0].faceAnnotations[0].angerLikelihood);
+    })
   }
 
 }

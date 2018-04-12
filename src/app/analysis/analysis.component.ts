@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GalleryImage } from '../models/galleryImage.model';
 import { HttpModule, Headers } from '@angular/http';
-import { masterKairosConfig } from '../api-keys';
 import * as $ from 'jquery';
 import { AnalysisService } from '../services/analysis.service';
 
