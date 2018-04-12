@@ -1,3 +1,5 @@
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
 <div class="row">
   <div class=col-md-12>
     <h1>{{title}}</h1>
@@ -6,11 +8,26 @@
       class="jumbotron">
     </div>
   </div>
-  <h3>You mad bro?</h3>
+</div>
+
+  <h3>Face emotion status:</h3>
   <br>
-  <form>
-    <button (click)="detectFace()">Find Out</button>
-  </form>
-  <br>
-  <div *ngIf="this.anger">{{this.anger}}</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form>
+          <button (click)="detectFace()">Find Out</button>
+        </form>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3 *ngIf="this.anger">You mad bro <span class="em em-angry"></span>? {{this.anger}}!</h3>
+        <h3 *ngIf="this.joy">You happy bro <span class="em em-smile"></span>? {{this.joy}}!</h3>
+        <h3 *ngIf="this.sorrow">You full of sorrow bro <span class="em em-cry"></span>? {{this.sorrow}}!</h3>
+        <h3 *ngIf="this.surprise">You surprised bro <span class="em em-astonished"></span>? {{this.surprise}}!</h3>
+        <h3 *ngIf="this.headwear">Any headwear <span class="em em-face_with_cowboy_hat"></span>? {{this.headwear}}!</h3>
+      </div>
+    </div>
 </div>
