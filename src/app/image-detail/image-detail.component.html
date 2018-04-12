@@ -6,8 +6,11 @@
       class="jumbotron">
     </div>
   </div>
+  <h3>You mad bro?</h3>
+  <br>
   <form>
-    <button (click)="detectFace()">Analyze Photo</button>
+    <button (click)="detectFace()">Find Out</button>
   </form>
-  <div *ngIf="this.joy | async">{{this.joy | async}}</div>
+  <br>
+  <div *ngIf="this.anger">{{this.anger}}</div>
 </div>

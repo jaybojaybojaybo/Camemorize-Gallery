@@ -14,10 +14,10 @@ export class ImageDetailComponent implements OnInit {
   private imageUrl: '';
   private title: string = '';
   private description: string = '';
+  public anger: string = '';
 
   analysis: any[] = null;
-  joy;
-
+  responses: any[] = null;
 
   constructor(
     private imageService: ImageService,
@@ -48,7 +48,9 @@ export class ImageDetailComponent implements OnInit {
     this.analysisService.detectFace(this.imageUrl)
       .subscribe(response => {
         this.analysis = response.json();
-        console.log(this.analysis);
+        this.anger = this.analysis.responses[0].faceAnnotations[0].angerLikelihood;
+        return this.anger.toString;
+        // console.log(this.analysis);
         // console.log("You mad, bro?" + " " + this.analysis.responses[0].faceAnnotations[0].angerLikelihood);
     })
   }
