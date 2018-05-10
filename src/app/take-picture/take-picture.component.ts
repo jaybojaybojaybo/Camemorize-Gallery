@@ -5,9 +5,7 @@ import { WebcamImage } from 'ngx-webcam';
 import { Injectable } from '@angular/core';
 import { Upload } from '../models/upload.model';
 import { UploadService } from '../services/upload.service';
-import b64toBlob, * as b64 from 'b64-to-blob';
-import { base64Decode } from '@firebase/util';
-import { Blob } from '@firebase/firestore-types';
+import { Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-take-picture',
@@ -17,12 +15,12 @@ import { Blob } from '@firebase/firestore-types';
 })
 export class TakePictureComponent {
   constructor(
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    private router: Router
   ) {}
 
   public showWebcam = true;
   public webcamImage: WebcamImage;
-  public imageFile;
   private trigger: Subject<void> = new Subject<void>();
 
   public upload: Upload;
@@ -45,17 +43,10 @@ export class TakePictureComponent {
     return this.trigger.asObservable();
   }
 
-  uploadWebcam() {
-    this.imageFile = this.webcamImage.imageAsBase64;
-    // console.log("IMG FILE AS B64: " + this.imageFile);
-    let newBlob = base64Decode(this.imageFile);
-    console.log(newBlob);
-    this.blob.push(newBlob);
-    let newUpload = new File(null, "cool.jpg");
-    let uploadFile = new Upload(newUpload);
-
-
-    //data:image/jpeg;base64,/9j/BASE64STRINGHERE//
-    //USE THIS FORMAT FOR IMG SRC IN HTML?!//
+  uploadWebcam(webcamImage) {    
+    this.upload = new Upload(webcamImage);  
+    this.upload.name = "capture.jpg";
+    this.uploadService.uploadWebcam(this.upload);
+    this.router.navigate(['/gallery']);
   }
 }

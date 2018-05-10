@@ -16,11 +16,10 @@ export class UploadService {
     private db: AngularFireDatabase
   ) { }
 
-  uploadFile(upload: Upload) {
+  uploadFile(upload: Upload) {    
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`)
-      .put(upload.file);
-
+      .put(upload.file);    
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
     // three observers
@@ -46,5 +45,34 @@ export class UploadService {
   private saveFileData(upload: Upload) {
     this.db.list(`${this.basePath}/`).push(upload);
 
+  }
+
+  uploadWebcam(upload: Upload) {
+    const storageRef = firebase.storage().ref();
+    // console.log("this is uploadWebcam storage ref: " + storageRef.fullPath); 
+    
+    const uploadTask = storageRef.child(`${this.basePath}/${upload.name}`)
+      .putString(upload.file, 'data_url');
+    // console.log("this is after storageRef: " + upload.file);
+    
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+    // three observers
+    // 1.) STATE_CHANGED observer
+    (snapshot) => {
+      // upload in progress
+      upload.progress = (uploadTask.snapshot.bytesTransferred / uploadTask.snapshot.totalBytes) * 100;
+    },
+    // 2.) error observer
+    (error) => {
+      //upload failed
+      console.log(error);
+    },
+    // 3.) success observer
+    (): any => {
+      upload.url = uploadTask.snapshot.downloadURL;
+      upload.name = upload.name;
+       this.saveFileData(upload);
+     }
+    );
   }
 }
