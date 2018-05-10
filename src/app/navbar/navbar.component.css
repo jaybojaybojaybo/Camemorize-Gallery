@@ -3,21 +3,21 @@ nav{
     background-color: #424242;
   }
   
-  .logo{
-    color: #fff;
-    font-family: 'cabin', sans-serif;
-    font-size: 1.5em;
-  }
+.logo{
+  color: #fff;
+  font-family: 'cabin', sans-serif;
+  font-size: 1.5em;
+}
   
-  ul.nav a{
-    transition:0.3s ease;
-  }
-  
-  ul.nav a:hover{
-    color: #fff;
-    background-color: #0D47A1;
-  }
-  
-  .active>a{
-    background-color: #616161;
-  }
+ul.nav a{
+  transition:0.3s ease;
+}
+
+ul.nav a:hover{
+  color: #fff;
+  background-color: #0D47A1;
+}
+
+.active>a{
+  background-color: #616161;
+}

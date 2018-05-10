@@ -26,12 +26,15 @@ export class UploadService {
     // three observers
     // 1.) STATE_CHANGED observer
     (snapshot) => {
-
+      // upload in progress
       upload.progress = (uploadTask.snapshot.bytesTransferred / uploadTask.snapshot.totalBytes) * 100;
     },
+    // 2.) error observer
     (error) => {
+      //upload failed
       console.log(error);
     },
+    // 3.) success observer
     (): any => {
       upload.url = uploadTask.snapshot.downloadURL;
       upload.name = upload.file.name;

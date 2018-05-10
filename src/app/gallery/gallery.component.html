@@ -1,7 +1,9 @@
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
 <h2>Latest Photos</h2>
-  <ul id="thumbnailList">
-    <li *ngFor="let image of images | async" class="img">
-      <a [routerLink]="['/image', image.$key]">
-        <img src="{{image.url}}" class="tn"></a>
-    </li>
-  </ul>
+<section id="photos">
+  <div *ngFor="let image of images | async" class="img">
+    <a [routerLink]="['/image', image.$key]">
+      <img src="{{image.url}}" class="tn"></a>
+    </div>
+</section>

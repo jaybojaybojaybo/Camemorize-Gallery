@@ -20,7 +20,7 @@ export class ImageDetailComponent implements OnInit {
   public surprise: string = '';
   public headwear: string = '';
 
-  analysis: any[] = null;
+  analysis;
   responses: any[] = null;
 
   constructor(
@@ -51,14 +51,14 @@ export class ImageDetailComponent implements OnInit {
   detectFace() {
     this.analysisService.detectFace(this.imageUrl)
       .subscribe(response => {
-        this.analysis = response.json();
+        this.analysis = response.json().responses[0].faceAnnotations[0];
         console.log(this.analysis);
-        console.log(this.analysis.responses[0].faceAnnotations[0].joyLikelihood);
-        this.anger = this.analysis.responses[0].faceAnnotations[0].angerLikelihood;
-        this.joy = this.analysis.responses[0].faceAnnotations[0].joyLikelihood;
-        this.sorrow = this.analysis.responses[0].faceAnnotations[0].sorrowLikelihood;
-        this.surprise = this.analysis.responses[0].faceAnnotations[0].surpriseLikelihood;
-        this.headwear = this.analysis.responses[0].faceAnnotations[0].headwearLikelihood;
+        console.log(this.analysis.joyLikelihood);
+        this.anger = this.analysis.angerLikelihood;
+        this.joy = this.analysis.joyLikelihood;
+        this.sorrow = this.analysis.sorrowLikelihood;
+        this.surprise = this.analysis.surpriseLikelihood;
+        this.headwear = this.analysis.headwearLikelihood;
     })
   }
 

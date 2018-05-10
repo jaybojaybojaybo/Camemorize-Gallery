@@ -6,11 +6,11 @@
 export const environment = {
 production: false,
 firebase: {
-  apiKey: "AIzaSyDnKLhL71OhkIXtx5jFtwWjLUyoEphcxWk",
-  authDomain: "camemorize-gallery.firebaseapp.com",
-  databaseURL: "https://camemorize-gallery.firebaseio.com",
-  projectId: "camemorize-gallery",
-  storageBucket: "camemorize-gallery.appspot.com",
-  messagingSenderId: "719213587118"
+  apiKey: "AIzaSyDM73eBXf3oTh2QZ5WUDf86Uri4nk4IIw0",
+  authDomain: "camemorize-f34d2.firebaseapp.com",
+  databaseURL: "https://camemorize-f34d2.firebaseio.com",
+  projectId: "camemorize-f34d2",
+  storageBucket: "camemorize-f34d2.appspot.com",
+  messagingSenderId: "297131839968"
   }
 };
