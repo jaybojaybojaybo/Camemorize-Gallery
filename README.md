@@ -26,7 +26,7 @@ Hosted At [Camemorize](https://camemorize-f34d2.firebaseapp.com)
 
 Login using User@user.com password   
 
-![gallery_screen](src/assets/images/Camemorize_Login.PNG)
+![gallery_screen](src/assets/images/Camemorize_Gallery.PNG)
 
 View Gallery as Login landing page   
 
