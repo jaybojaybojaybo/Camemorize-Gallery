@@ -38,7 +38,7 @@ Choose a file from your computer.
 Push the 'Upload Images' button.
 See the pictures added to the gallery.
 
-![takepic_screen](https://i.imgur.com/z02cjUc.png)
+![takepic_screen](src/assets/images/Camemorize_TakePic.PNG)
 
 Navigate to the 'Take Pic'page via the link in the navbar.
 Take a picture through your webcam and select Upload to upload it to Firebase.
