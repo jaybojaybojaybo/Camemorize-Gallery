@@ -5,5 +5,5 @@
 </div>
 <div class="snapshot" *ngIf="webcamImage">
   <img [src]="webcamImage.imageAsDataUrl"/>
-  <button class="actionBtn" (click)="uploadWebcam()">Upload snapshot</button>
+  <button type="button" (click)="uploadWebcam(webcamImage.imageAsDataUrl)">Upload snapshot</button>
 </div>
