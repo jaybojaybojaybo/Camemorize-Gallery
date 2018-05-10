@@ -8,7 +8,7 @@
 
 Camemorize is an Angular application that allows users to upload multiple photos, capture an image from their webcam, and detect emotions on a single person in that photo. The website will store each photo in Firebase and display them in the image gallery. Log In credentials are required.
 
-##Hosted At [Camemorize](https://camemorize-f34d2.firebaseapp.com)
+Hosted At [Camemorize](https://camemorize-f34d2.firebaseapp.com)
 
 ## User stories
 * As a user, I would like to log into Camemorize using an email and password.
