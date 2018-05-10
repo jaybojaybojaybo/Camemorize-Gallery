@@ -24,25 +24,25 @@ Hosted At [Camemorize](https://camemorize-f34d2.firebaseapp.com)
 
 ![login_screen](src/assets/images/Camemorize_Login.PNG)
 
-Login using User@user.com password
+Login using User@user.com password   
 
 ![gallery_screen](src/assets/images/Camemorize_Login.PNG)
 
-View Gallery as Login landing page
+View Gallery as Login landing page   
 
 ![upload_screen](src/assets/images/Camemorize_Upload.PNG)
 
-Upload one or more pictures from the Upload page.
-Follow the link in the navbar to the Upload page.
-Choose a file from your computer.
-Push the 'Upload Images' button.
-See the pictures added to the gallery.
+Upload one or more pictures from the Upload page.   
+Follow the link in the navbar to the Upload page.   
+Choose a file from your computer.   
+Push the 'Upload Images' button.   
+See the pictures added to the gallery.   
 
 ![takepic_screen](src/assets/images/Camemorize_TakePic.PNG)
 
-Navigate to the 'Take Pic'page via the link in the navbar.
-Take a picture through your webcam and select Upload to upload it to Firebase.
-See the picture added to the gallery.
+Navigate to the 'Take Pic'page via the link in the navbar.   
+Take a picture through your webcam and select Upload to upload it to Firebase.   
+See the picture added to the gallery.   
 
 ## Setup
 
