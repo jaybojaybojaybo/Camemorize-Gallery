@@ -1,6 +1,6 @@
 export class Upload {
   $key: string;
-  file: File;
+  file: any;
   url: string;
   progress: number;
   createdOn: Date = new Date();

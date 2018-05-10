@@ -8,6 +8,8 @@
 
 # dependencies
 /node_modules
+/environments
+api-keys
 
 # IDEs and editors
 /.idea
