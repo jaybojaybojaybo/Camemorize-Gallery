@@ -43,9 +43,10 @@ export class TakePictureComponent {
     return this.trigger.asObservable();
   }
 
-  uploadWebcam(webcamImage) {    
+  uploadWebcam(webcamImage) {
+    let timestamp = new Date().getTime().toString();    
     this.upload = new Upload(webcamImage);  
-    this.upload.name = "capture.jpg";
+    this.upload.name = timestamp + ".jpg";
     this.uploadService.uploadWebcam(this.upload);
     this.router.navigate(['/gallery']);
   }
