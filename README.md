@@ -2,7 +2,7 @@
 
 #### By [Jasun Feddema](https://github.com/jaybojaybojaybo)
 
-#### Based on the Epicodus Angular Group Project By [Ron Craig](https://github.com/r-craig73), [Alex Ficklin](https://github.com/AlexFicklin), [Jasun Feddema](https://github.com/jaybojaybojaybo), [Johnny Mayer](https://github.com/johnnymayer)
+#### Based on the Epicodus Angular Group Project By [Ron Craig](https://github.com/r-craig73), [Alex Ficklin](https://github.com/AlexFicklin), [Jasun Feddema](https://github.com/jaybojaybojaybo), and [Johnny Mayer](https://github.com/johnnymayer)
 
 ## Description
 
@@ -19,6 +19,10 @@ Hosted At [Camemorize](https://camemorize-f34d2.firebaseapp.com)
 * As a user, I would like to detect a person's primal emotion and wearing headwear (hat, hoodie, scarf, etc.).
 * As a user, I would like to use the computer's webcam to upload an image to the database.
 
+
+## Run through
+
+[!login_screen](src/assets/images/Camemorize_Login.PNG)
 ## Setup
 
 * Within terminal, clone this [repository](https://github.com/jaybojaybojaybo/Camemorize-Gallery) into the directory of your choice.

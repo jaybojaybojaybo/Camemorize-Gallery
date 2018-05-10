@@ -35,6 +35,7 @@ api-keys
 npm-debug.log
 testem.log
 /typings
+/assets/images
 
 # e2e
 /e2e/*.js
